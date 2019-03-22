@@ -134,7 +134,7 @@ func (s ServerResource) EntityCreateHandlerV1_1(w http.ResponseWriter, r *http.R
 		w.Write([]byte(fmt.Sprintf("{\"status\": %v, \"error\": \"%s\"}", code, trim(err.Error()))))
 		return
 	}
-	payload, err := buildEntityData(clusterName, meta, body, false)
+	payload, err := util.BuildEntityData(clusterName, meta, body, false)
 	if err != nil {
 		metrics.KatlasNumReqErr.Inc()
 		metrics.KatlasNumReqErr4xx.Inc()

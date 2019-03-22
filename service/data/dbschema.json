@@ -54,6 +54,16 @@
 		]
 	},
 	{
+		"predicate": "userdata",
+		"type": "string",
+		"index": true,
+		"upsert": false,
+		"tokenizer": [
+			"term",
+			"trigram"
+		]
+	},
+	{
 		"predicate": "availablereplicas",
 		"type": "int",
 		"index": true,
